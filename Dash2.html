@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System 2 - Regions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, #f12711, #f5af19);
+            color: #fff;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .description {
+            margin-bottom: 30px;
+        }
+
+        .description p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .tableau-container {
+            width: 100%;
+            height: 600px;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            font-size: 1em;
+            color: #fff;
+            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            background: rgba(0, 0, 0,  Ascendingly)
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>System 2 - Regions</h1>
+    </header>
+
+    <div class="container">
+        <div class="description">
+            <h2>Regional Performance Dashboard</h2>
+            <p>This dashboard visualizes sales performance across different regions, highlighting key metrics such as revenue, growth trends, and market share. Use this system to optimize regional strategies.</p>
+        </div>
+        <div class="tableau-container">
+            <div id="vizContainer"></div>
+        </div>
+        <a href="index.html" class="btn">Back to Home</a>
+    </div>
+
+    <footer>
+        <p>© 2025 Ron's System. All rights reserved.</p>
+    </footer>
+
+    <script src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+    <script>
+        function initViz() {
+            const containerDiv = document.getElementById("vizContainer");
+            const vizUrl = "https://public.tableau.com/views/Matala2Dash2/Dashboard2?:language=en-US&:display_count=n&:origin=viz_share_link"
+            const options = {
+                width: "100%",
+                height: "100%",
+                hideTabs: true,
+                hideToolbar: true,
+            };
+            new tableau.Viz(containerDiv, vizUrl, options);
+        }
+        document.addEventListener("DOMContentLoaded", initViz);
+    </script>
+</body>
+</html>
